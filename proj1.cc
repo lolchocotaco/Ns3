@@ -37,8 +37,6 @@ int main (int argc, char *argv[])
     /******** Note quite sure what this does********/
     CommandLine cmd;
     cmd.AddValue("latency", "P2P link Latency in Milliseconds",latency);
-//    cmd.AddValue("Rate","P2P data rate in bps", dataRate);
-//    cmd.addValue("Interval", "UDP client Packet inverval", interval);
     cmd.Parse(argc,argv);
     /*******************************************/
 
@@ -72,7 +70,7 @@ int main (int argc, char *argv[])
     address.SetBase ("10.1.1.0", "255.255.255.0");
 
     Ipv4InterfaceContainer interfaces = address.Assign (devices);
-    Ipv4GlobalRoutingHelper::PopulateRoutingTables();
+    Ipv4GlobalRoutingHelper::PopulateRoutingTables(); // For more than a single link
 
 
     //Create Applications 
