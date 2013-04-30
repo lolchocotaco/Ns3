@@ -35,11 +35,11 @@ int main (int argc, char *argv[])
     double interval = 0.02;   //Inter Packet Arrival Time
 
     /******** Note quite sure what this does********/
-//    CommandLine cmd;
-//    cmd.AddValue("Latency", "P2P link Latency in Milliseconds",latency);
+    CommandLine cmd;
+    cmd.AddValue("latency", "P2P link Latency in Milliseconds",latency);
 //    cmd.AddValue("Rate","P2P data rate in bps", dataRate);
 //    cmd.addValue("Interval", "UDP client Packet inverval", interval);
-//    cmd.Parse(argc,argv);
+    cmd.Parse(argc,argv);
     /*******************************************/
 
 
@@ -124,7 +124,7 @@ int main (int argc, char *argv[])
 
 
     NS_LOG_INFO("Run Simulation");
-    std::cout<<"======RUNNING SIMULATION========="<<std::endl;
+    std::cout<<"======LATENCY ="<<latency<<"=========="<<std::endl;
 
     Simulator::Stop (Seconds(12.0));
     Simulator::Run ();
@@ -135,7 +135,7 @@ int main (int argc, char *argv[])
     std::map<FlowId, FlowMonitor::FlowStats> stats = monitor->GetFlowStats ();
     for (std::map<FlowId, FlowMonitor::FlowStats>::const_iterator i = stats.begin (); i != stats.end (); ++i){
         Ipv4FlowClassifier::FiveTuple t = classifier->FindFlow (i->first);
-        if ((t.sourceAddress=="10.1.1.1" && t.destinationAddress == "10.1.2.2")){
+        if ((t.sourceAddress=="10.1.1.1" && t.destinationAddress == "10.1.1.2")){
             std::cout << "Flow " << i->first  << " (" << t.sourceAddress << " -> " << t.destinationAddress << ")\n";
             std::cout << "  Tx Bytes:   " << i->second.txBytes << "\n";
             std::cout << "  Rx Bytes:   " << i->second.rxBytes << "\n";

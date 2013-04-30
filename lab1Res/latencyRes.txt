@@ -1,0 +1,49 @@
+======LATENCY =1==========
+Flow 1 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.485335 Mbps
+Flow 3 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.485335 Mbps
+
+======LATENCY =10==========
+Flow 1 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.437694 Mbps
+Flow 3 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.437694 Mbps
+
+======LATENCY =100==========
+Flow 1 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.220878 Mbps
+Flow 3 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.220878 Mbps
+
+======LATENCY =1000==========
+Flow 1 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.0371 Mbps
+Flow 2 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   5260
+  Throughput: 0.0371 Mbps
+
+======LATENCY =10000==========
+Flow 1 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   4208
+  Throughput: 0.00318444 Mbps
+Flow 2 (10.1.1.1 -> 10.1.1.2)
+  Tx Bytes:   5260
+  Rx Bytes:   4208
+  Throughput: 0.00318444 Mbps
