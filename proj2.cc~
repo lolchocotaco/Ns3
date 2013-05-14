@@ -23,6 +23,7 @@
 #include "ns3/ipv4-global-routing-helper.h"
 #include <iostream>
 #include "app.cc"
+#include <string>
 
 using namespace ns3;
 
@@ -46,9 +47,13 @@ int main (int argc, char *argv[])
 {
 
     // Set up Variables
-    double latency = 2.0; // 2ms daly
-    uint64_t dataRate = 5000000; //5Mbps data rate
-    double interval = 0.02;   //Inter Packet Arrival Time
+//     double latency = 2.0; // 2ms daly
+//     uint64_t dataRate = 5000000; //5Mbps data rate
+//     double interval = 0.02;   //Inter Packet Arrival Time
+
+    std::string lat = "2ms"
+    std::string rate= "500kb/s"	
+    bool enableFlowMonitor = false
 
     /******** Command Line ********/
     CommandLine cmd;
@@ -164,7 +169,7 @@ int main (int argc, char *argv[])
     serverApps.Stop (Seconds (12.0));
 
 
-     Simulator::Stop (Seconds(100.0));
+    Simulator::Stop (Seconds(100.0));
     Simulator::Run ();
     if (enableFlowMonitor)
       {
@@ -172,6 +177,7 @@ int main (int argc, char *argv[])
 	    flowmon->SerializeToXmlFile("lab2Res/lab-2.flowmon", true, true);
       }
     Simulator::Destroy ();
+    return 0;
     
     
     
